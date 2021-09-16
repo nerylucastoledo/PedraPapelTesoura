@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Pedra, Papel e Tesoura</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Pedra, Papel ou Tesoura</h1>
+    </header>
+
+    <main>
+        <div class="jogadores">
+            <div class="voce">
+                <p class="escolha-usuario"></p>
+                <div class="resultados">
+                    <h2>Você</h2>
+                    <span id="vitoria-usuario">0</span>
+                </div>
+                <picture id="pedra">
+                    <img src="./imagens/pedra.png" alt="Mão fazendo sinal de pedra">
+                </picture>
+                <picture id="papel">
+                    <img src="./imagens/papel.png" alt="Mão fazendo sinal de papel">
+                </picture>
+                <picture id="tesoura">
+                    <img src="./imagens/tesoura.png" alt="Mão fazendo sinal de tesoura">
+                </picture>
+            </div>
+            
+            <span>VS</span>
+    
+            <div class="computador">
+                <p class="escolha-computador"></p>
+                <div class="resultados">
+                    <h2>Computador</h2>
+                    <span id="vitoria-computador">0</span>
+                </div>
+                <picture id="computador">
+                    <img src="./imagens/computador_ppt.png" alt="Mãos fazendo sinal de pedra, papel e tesoura">
+                </picture>
+            </div>
+        </div>
+
+        <div class="vitorioso">
+            <p id="texto-vitoria"></p>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
