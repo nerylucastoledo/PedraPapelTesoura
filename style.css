@@ -1,124 +1,121 @@
 * {
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-body {
-    background-color: rgb(229, 226, 226);
-}
-
-.jogadores {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 0px 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.jogadores span {
-    display: flex;
-    align-items: center;
-    font-size: 42px;
+    font-family: 'Asap',sans-serif;
 }
 
 header {
+    padding: 30px 0px;
     text-align: center;
+    background-color: #fff;
+}
+
+body {
+    background-color: #292C34;
+}
+
+.placar {
+    display: flex;
+    justify-content: center;
+    font-size: 42px;
+    border: 3px solid #fff;
+    max-width: 380px;
+    margin: 0 auto;
     color: #fff;
-    background-color: #62CFD6;
-    padding: 20px 0;
+    margin-bottom: 40px;
+    padding: 5px;
+    align-items: center;
+}
+
+.placar p {
+    margin: 0px 20px;
+}
+
+main {
+    padding: 40px 0px;
+}
+
+.jogadores {
+    margin-top: 60px;
+}
+
+.palavra-computador, .palavra-voce {
+    font-size: 20px;
+    color: #bd5c1c;
+    font-weight: bold;
 }
 
 .voce {
-    background-color: #6BAAC5;
-    padding: 20px;
-}
-
-.voce h2, .computador h2 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-#vitoria-usuario, #vitoria-computador {
-    font-size: 42px;
-    font-weight: bold;
-}
-
-.computador {
-    background-color: #E15F5F;
-    padding: 20px;
-}
-
-.computador, .voce {
-    text-align: center;
-    color: #000;
-    font-size: 32px;
-    border-radius: 10px;
-}
-
-.computador img {
-    max-width: 400px;
-    display: block;
-    margin: 0 auto;
-}
-
-.vitorioso {
-    max-width: 1100px;
-    margin: 0px auto;
-    background-color: #7DFB7A;
-    text-align: center;
-    font-size: 32px;
-    padding: 20px 0px;
-    height: 80px;
-    border-radius: 10px;
-    margin-bottom: 60px;
-}
-
-.escolha-usuario, .escolha-computador {
-    color: rgb(243, 232, 232);
-    font-weight: bold;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 #pedra img, #papel img, #tesoura img {
-    cursor: pointer;
+    max-width: 80px;
+    max-height: 80px;
 }
 
-.tooltiptext {
+#pedra, #papel, #tesoura {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 0px 20px;
+    padding: 20px;
+    max-width: 100%;
+}
+
+#pedra p, #papel p, #tesoura p{
+    text-align: center;
+    margin-top: 10px;
     font-weight: bold;
 }
 
-#pedra img:hover, #papel img:hover, #tesoura img:hover {
-    transform: scale(1.2);
+#papel p {
+    margin-top: 20px;
+}
+
+#tesoura p {
+    margin-top: 40px;
+}
+
+#pedra:hover, #papel:hover, #tesoura:hover {
     transition: .3s;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
-.informacao-jogo {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);;
+.vitorioso {
+    background-color: rgb(196, 191, 191);
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #fff;
 }
 
-.info-imagens {
+.escolhas {
+    background-color: rgb(228, 232, 235);
+    max-width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    text-align: center;
+    margin: 60px auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0;
+    font-size: 24px;
 }
 
-.info-imagens div img {
-    max-width: 70px;
-    max-height: 70px;
-    margin-bottom: 10px;
-}
+@media (max-width: 460px) {
+    #pedra img, #papel img, #tesoura img {
+        width: 60px;
+        height: 60px;
+    }
 
-.descricao h2{
-    margin-bottom: 20px;
-}
-
-.descricao {
-    margin-left: 50px;
+    #pedra:hover, #papel:hover, #tesoura:hover {
+        transform: scale(1.0);
+    }
 }

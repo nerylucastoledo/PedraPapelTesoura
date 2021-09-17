@@ -2,14 +2,16 @@ const pedra = document.getElementById('pedra')
 const papel = document.getElementById('papel')
 const tesoura = document.getElementById('tesoura')
 
-var campoVitorioso = document.querySelector('.vitorioso')
-var textoVitorioso = document.getElementById('texto-vitoria')
+const textoVitorioso = document.querySelector('.texto-vitoria')
+const corDoVitorioso = document.querySelector('.vitorioso')
 
-const campoEscolhaDoUsuario = document.querySelector('.escolha-usuario')
-const campoEscolhaDoComputador = document.querySelector('.escolha-computador')
+const escolhas = document.querySelector('.escolhas')
 
-var vitoriasDoUsuario = document.getElementById('vitoria-usuario')
-var vitoriasDoComputador= document.getElementById('vitoria-computador')
+const escolhaUsuario = document.querySelector('.escolha-usuario')
+const escolhaComputador = document.querySelector('.escolha-computador')
+
+const vitoriasDoUsuario = document.getElementById('vitoria-usuario')
+const vitoriasDoComputador= document.getElementById('vitoria-computador')
 
 var vitoriasUsuario = 1
 var vitoriasComputador = 1
@@ -32,31 +34,34 @@ const aEscolhaDoUsuario = (maoSelecioanda) => {
 
     const resultado = resultadoJogo(maoSelecioandaPeloUsuario, masSelecionadaPeloComputador)
 
+    escolhaUsuario.innerText = maoSelecioandaPeloUsuario[0].toUpperCase() + maoSelecioandaPeloUsuario.substr(1)
+    escolhaComputador.innerText = masSelecionadaPeloComputador[0].toUpperCase() + masSelecionadaPeloComputador.substr(1)
+
+    escolhas.style.opacity = 1
+
     if(resultado == 1) {
         vitoriasDoUsuario.innerText = vitoriasUsuario
         vitoriasUsuario += 1
-        
-        campoVitorioso.style.backgroundColor = '#7DFB7A'
-        textoVitorioso.innerText = 'Você ganhou'
+
+        textoVitorioso.innerText = 'Você ganhou essa rodada!'
+        corDoVitorioso.style.backgroundColor = "#7DFB7A"
 
     } else if(resultado == 0) {
         vitoriasDoComputador.innerText = vitoriasComputador
         vitoriasComputador += 1
 
-        campoVitorioso.style.backgroundColor = '#EA8F8F'
-        textoVitorioso.innerText = 'Você Perdeu'
-    } else {
-        campoVitorioso.style.backgroundColor = '#DDD4D4'
-        textoVitorioso.innerText = 'Empate'
-    }
-}
+        textoVitorioso.innerText = 'Você perdeu essa rodada!'
+        corDoVitorioso.style.backgroundColor = "#EA8F8F"
 
+    } else {
+        textoVitorioso.innerText = 'Vocês empataram!'
+        corDoVitorioso.style.backgroundColor = "rgb(196, 191, 191)"
+    }
+
+}
 
 const resultadoJogo = (escolhaJogador, escolhaComputador) => {
     
-    campoEscolhaDoUsuario.innerText = escolhaJogador[0].toUpperCase() + escolhaJogador.substr(1)
-    campoEscolhaDoComputador.innerText = escolhaComputador[0].toUpperCase() + escolhaComputador.substr(1)
-
     if (escolhaJogador === escolhaComputador) {
         return 2
     } else if (escolhaJogador === 'pedra' && escolhaComputador === 'papel') {
@@ -75,13 +80,37 @@ const resultadoJogo = (escolhaJogador, escolhaComputador) => {
 }
 
 pedra.addEventListener('click', function() {
+    pedra.style.border = '2px solid #62CFD6'
+    pedra.style.filter = 'brightness(90%)'
+
     aEscolhaDoUsuario('pedra')
+
+    setTimeout(() => {
+        pedra.style.border = '1px solid #fff'
+        pedra.style.filter = 'brightness(100%)'
+    }, 500)
+
 })
 
 papel.addEventListener('click', function() {
+    papel.style.border = '2px solid #62CFD6'
+    papel.style.filter = 'brightness(90%)'
+
     aEscolhaDoUsuario('papel')
+
+    setTimeout(() => {
+        papel.style.border = '1px solid #fff'
+        papel.style.filter = 'brightness(100%)'
+    }, 500)
 })
 
 tesoura.addEventListener('click', function() {
+    tesoura.style.border = '2px solid #62CFD6'
+    tesoura.style.filter = 'brightness(90%)'
+
     aEscolhaDoUsuario('tesoura')
+    setTimeout(() => {
+        tesoura.style.border = '1px solid #fff'
+        tesoura.style.filter = 'brightness(100%)'
+    }, 500)
 })
