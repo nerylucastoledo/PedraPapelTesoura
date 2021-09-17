@@ -7,14 +7,14 @@
 
 .jogadores {
     max-width: 1100px;
-    margin: 60px auto;
-    display: grid;
-    grid-template-columns: 500px 100px 500px;
+    margin: 80px auto;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .jogadores span {
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 42px;
 }
@@ -28,19 +28,21 @@ header {
 
 .voce {
     background-color: #6BAAC5;
+    padding: 20px;
 }
 
-.voce h2 {
-    margin-top: 40px;
+.voce h2, .computador h2 {
+    margin-top: 20px;
     margin-bottom: 30px;
+}
+
+#vitoria-usuario, #vitoria-computador {
+    font-size: 32px;
 }
 
 .computador {
     background-color: #E15F5F;
-}
-
-.computador h2 {
-    margin-top: 40px;
+    padding: 20px;
 }
 
 .computador, .voce {
@@ -49,7 +51,7 @@ header {
     font-size: 32px;
 }
 
-#computador img {
+.computador img {
     max-width: 400px;
     display: block;
     margin: 0 auto;
@@ -57,23 +59,16 @@ header {
 
 .vitorioso {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0px auto;
     background-color: #7DFB7A;
     text-align: center;
     font-size: 32px;
-    padding: 20px 0;
+    padding: 20px 0px;
     height: 80px;
 }
 
-.resultados {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0px 30px
-}
-
 .escolha-usuario, .escolha-computador {
-    color: #000;
+    color: rgb(82, 80, 80);
     font-weight: bold;
 }
 
@@ -84,4 +79,32 @@ header {
 #pedra img:hover, #papel img:hover, #tesoura img:hover {
     transform: scale(1.2);
     transition: .3s;
+}
+
+.informacao-jogo {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);;
+}
+
+.info-imagens {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.info-imagens div img {
+    max-width: 70px;
+    max-height: 70px;
+    margin-bottom: 10px;
+}
+
+.descricao h2{
+    margin-bottom: 20px;
+}
+
+.descricao {
+    margin-left: 50px;
 }

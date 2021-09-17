@@ -31,7 +31,6 @@ const aEscolhaDoUsuario = (maoSelecioanda) => {
     const maoSelecioandaPeloUsuario = maoSelecioanda
 
     const resultado = resultadoJogo(maoSelecioandaPeloUsuario, masSelecionadaPeloComputador)
-    console.log(resultado)
 
     if(resultado == 1) {
         vitoriasDoUsuario.innerText = vitoriasUsuario

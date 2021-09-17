@@ -15,36 +15,77 @@
         <h1>Pedra, Papel ou Tesoura</h1>
     </header>
 
+    <div class="informacao-jogo">
+
+        <div class="info-imagens">
+            <div>
+                <picture>
+                    <img src="./imagens/pedra.png" alt="Mão fazendo sinal de pedra">
+                </picture>
+                <p class="tooltiptext">Pedra</p>
+            </div>
+
+            <div>
+                <picture>
+                    <img src="./imagens/papel.png" alt="Mão fazendo sinal de papel">
+                </picture>
+                <p class="tooltiptext">Papel</p>
+            </div>
+
+            <div>
+                <picture>
+                    <img src="./imagens/tesoura.png" alt="Mão fazendo sinal de tesoura">
+                </picture>
+                <p class="tooltiptext">Tesoura</p>
+            </div>
+        </div>
+    
+        <div class="descricao">
+            <h2>Como jogar?</h2>
+            <p>Para jogar é muito simpes, basta você clicar em alguma mão dentro do quadrado e a sua escolha já estará feita. O computador irá escolher uma e no final o resultado será mostrado abaixo.</p>
+        </div>
+    </div>
+
     <main>
         <div class="jogadores">
+
             <div class="voce">
                 <p class="escolha-usuario"></p>
-                <div class="resultados">
+
+                <div>
                     <h2>Você</h2>
-                    <span id="vitoria-usuario">0</span>
                 </div>
+
                 <picture id="pedra">
                     <img src="./imagens/pedra.png" alt="Mão fazendo sinal de pedra">
                 </picture>
+
                 <picture id="papel">
                     <img src="./imagens/papel.png" alt="Mão fazendo sinal de papel">
                 </picture>
+
                 <picture id="tesoura">
                     <img src="./imagens/tesoura.png" alt="Mão fazendo sinal de tesoura">
                 </picture>
+
             </div>
+            <p id="vitoria-usuario">0</p>
             
             <span>VS</span>
     
+            <p id="vitoria-computador">0</p>
             <div class="computador">
                 <p class="escolha-computador"></p>
-                <div class="resultados">
+
+                
+                <div>
                     <h2>Computador</h2>
-                    <span id="vitoria-computador">0</span>
                 </div>
+
                 <picture id="computador">
                     <img src="./imagens/computador_ppt.png" alt="Mãos fazendo sinal de pedra, papel e tesoura">
                 </picture>
+
             </div>
         </div>
 
