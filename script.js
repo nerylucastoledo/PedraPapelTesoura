@@ -47,15 +47,15 @@ const aEscolhaDoUsuario = (maoSelecioanda) => {
         textoVitorioso.innerText = 'Você Perdeu'
     } else {
         campoVitorioso.style.backgroundColor = '#DDD4D4'
-        textoVitorioso.innerText = 'Ninguém ganhou, vocês escolheram a mesma opção'
+        textoVitorioso.innerText = 'Empate'
     }
 }
 
 
 const resultadoJogo = (escolhaJogador, escolhaComputador) => {
     
-    campoEscolhaDoUsuario.innerText = escolhaJogador
-    campoEscolhaDoComputador.innerText = escolhaComputador
+    campoEscolhaDoUsuario.innerText = escolhaJogador[0].toUpperCase() + escolhaJogador.substr(1)
+    campoEscolhaDoComputador.innerText = escolhaComputador[0].toUpperCase() + escolhaComputador.substr(1)
 
     if (escolhaJogador === escolhaComputador) {
         return 2

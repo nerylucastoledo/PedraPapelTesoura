@@ -5,12 +5,17 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+body {
+    background-color: rgb(229, 226, 226);
+}
+
 .jogadores {
     max-width: 1100px;
     margin: 80px auto;
     padding: 0px 10px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .jogadores span {
@@ -32,12 +37,14 @@ header {
 }
 
 .voce h2, .computador h2 {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 36px;
 }
 
 #vitoria-usuario, #vitoria-computador {
-    font-size: 32px;
+    font-size: 42px;
+    font-weight: bold;
 }
 
 .computador {
@@ -47,8 +54,9 @@ header {
 
 .computador, .voce {
     text-align: center;
-    color: #fff;
+    color: #000;
     font-size: 32px;
+    border-radius: 10px;
 }
 
 .computador img {
@@ -65,15 +73,21 @@ header {
     font-size: 32px;
     padding: 20px 0px;
     height: 80px;
+    border-radius: 10px;
+    margin-bottom: 60px;
 }
 
 .escolha-usuario, .escolha-computador {
-    color: rgb(82, 80, 80);
+    color: rgb(243, 232, 232);
     font-weight: bold;
 }
 
 #pedra img, #papel img, #tesoura img {
     cursor: pointer;
+}
+
+.tooltiptext {
+    font-weight: bold;
 }
 
 #pedra img:hover, #papel img:hover, #tesoura img:hover {
