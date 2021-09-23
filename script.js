@@ -1,20 +1,26 @@
-const pedra = document.getElementById('pedra')
-const papel = document.getElementById('papel')
-const tesoura = document.getElementById('tesoura')
-
-const textoVitorioso = document.querySelector('.texto-vitoria')
-const corDoVitorioso = document.querySelector('.vitorioso')
-
-const escolhas = document.querySelector('.escolhas')
-
-const escolhaUsuario = document.querySelector('.escolha-usuario')
-const escolhaComputador = document.querySelector('.escolha-computador')
-
-const vitoriasDoUsuario = document.getElementById('vitoria-usuario')
-const vitoriasDoComputador= document.getElementById('vitoria-computador')
-
 var vitoriasUsuario = 1
 var vitoriasComputador = 1
+ 
+const pedra = document.getElementById('pedra')
+pedra.addEventListener('click', function() {
+    mostrarMaoSelecionadaPelosJogadores('pedra')
+    verificarQuemGanhou('pedra')
+
+})
+
+const papel = document.getElementById('papel')
+papel.addEventListener('click', function() {
+    mostrarMaoSelecionadaPelosJogadores('papel')
+    verificarQuemGanhou('papel')
+
+})
+
+const tesoura = document.getElementById('tesoura')
+tesoura.addEventListener('click', function() {
+    mostrarMaoSelecionadaPelosJogadores('tesoura')
+    verificarQuemGanhou('tesoura')
+
+})
 
 const aEscolhaDoComputador = () => {
     const escolhaComputador = Math.floor(Math.random() * 3 + 1)
@@ -26,18 +32,33 @@ const aEscolhaDoComputador = () => {
     } else {
         return 'tesoura'
     }
+
 }
 
-const aEscolhaDoUsuario = (maoSelecioanda) => {
+const mostrarMaoSelecionadaPelosJogadores = (maoSelecionadaPeloUsuario) => {
+
+    const escolhaUsuario = document.querySelector('.escolha-usuario')
+    const escolhaComputador = document.querySelector('.escolha-computador')
     const masSelecionadaPeloComputador = aEscolhaDoComputador()
-    const maoSelecioandaPeloUsuario = maoSelecioanda
 
-    const resultado = resultadoJogo(maoSelecioandaPeloUsuario, masSelecionadaPeloComputador)
+    escolhaUsuario.innerText = maoSelecionadaPeloUsuario
+    escolhaComputador.innerText = masSelecionadaPeloComputador
 
-    escolhaUsuario.innerText = maoSelecioandaPeloUsuario[0].toUpperCase() + maoSelecioandaPeloUsuario.substr(1)
-    escolhaComputador.innerText = masSelecionadaPeloComputador[0].toUpperCase() + masSelecionadaPeloComputador.substr(1)
+}
 
-    escolhas.style.opacity = 1
+const verificarQuemGanhou = (maoSelecionadaPeloUsuario) => {
+
+    const masSelecionadaPeloComputador = aEscolhaDoComputador()
+    const resultado = resultaDoJogo(maoSelecionadaPeloUsuario, masSelecionadaPeloComputador)
+
+    const textoVitorioso = document.querySelector('.texto-vitoria')
+    const corDoVitorioso = document.querySelector('.vitorioso')
+
+    const vitoriasDoUsuario = document.getElementById('vitoria-usuario')
+    const vitoriasDoComputador= document.getElementById('vitoria-computador')
+
+    const quadradoDaEscolha = document.querySelector('.escolhas')
+    quadradoDaEscolha.style.opacity = 1
 
     if(resultado == 1) {
         vitoriasDoUsuario.innerText = vitoriasUsuario
@@ -60,7 +81,7 @@ const aEscolhaDoUsuario = (maoSelecioanda) => {
 
 }
 
-const resultadoJogo = (escolhaJogador, escolhaComputador) => {
+const resultaDoJogo = (escolhaJogador, escolhaComputador) => {
     
     if (escolhaJogador === escolhaComputador) {
         return 2
@@ -78,39 +99,3 @@ const resultadoJogo = (escolhaJogador, escolhaComputador) => {
         return 1
     }
 }
-
-pedra.addEventListener('click', function() {
-    pedra.style.border = '2px solid #62CFD6'
-    pedra.style.filter = 'brightness(90%)'
-
-    aEscolhaDoUsuario('pedra')
-
-    setTimeout(() => {
-        pedra.style.border = '1px solid #fff'
-        pedra.style.filter = 'brightness(100%)'
-    }, 500)
-
-})
-
-papel.addEventListener('click', function() {
-    papel.style.border = '2px solid #62CFD6'
-    papel.style.filter = 'brightness(90%)'
-
-    aEscolhaDoUsuario('papel')
-
-    setTimeout(() => {
-        papel.style.border = '1px solid #fff'
-        papel.style.filter = 'brightness(100%)'
-    }, 500)
-})
-
-tesoura.addEventListener('click', function() {
-    tesoura.style.border = '2px solid #62CFD6'
-    tesoura.style.filter = 'brightness(90%)'
-
-    aEscolhaDoUsuario('tesoura')
-    setTimeout(() => {
-        tesoura.style.border = '1px solid #fff'
-        tesoura.style.filter = 'brightness(100%)'
-    }, 500)
-})
