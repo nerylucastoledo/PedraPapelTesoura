@@ -3,21 +3,18 @@ var vitoriasComputador = 1
  
 const pedra = document.getElementById('pedra')
 pedra.addEventListener('click', function() {
-    mostrarMaoSelecionadaPelosJogadores('pedra')
     verificarQuemGanhou('pedra')
 
 })
 
 const papel = document.getElementById('papel')
 papel.addEventListener('click', function() {
-    mostrarMaoSelecionadaPelosJogadores('papel')
     verificarQuemGanhou('papel')
 
 })
 
 const tesoura = document.getElementById('tesoura')
 tesoura.addEventListener('click', function() {
-    mostrarMaoSelecionadaPelosJogadores('tesoura')
     verificarQuemGanhou('tesoura')
 
 })
@@ -32,17 +29,6 @@ const aEscolhaDoComputador = () => {
     } else {
         return 'tesoura'
     }
-
-}
-
-const mostrarMaoSelecionadaPelosJogadores = (maoSelecionadaPeloUsuario) => {
-
-    const escolhaUsuario = document.querySelector('.escolha-usuario')
-    const escolhaComputador = document.querySelector('.escolha-computador')
-    const masSelecionadaPeloComputador = aEscolhaDoComputador()
-
-    escolhaUsuario.innerText = maoSelecionadaPeloUsuario
-    escolhaComputador.innerText = masSelecionadaPeloComputador
 
 }
 
@@ -78,6 +64,18 @@ const verificarQuemGanhou = (maoSelecionadaPeloUsuario) => {
         textoVitorioso.innerText = 'Vocês empataram!'
         corDoVitorioso.style.backgroundColor = "rgb(196, 191, 191)"
     }
+
+    mostrarMaoSelecionadaPelosJogadores(maoSelecionadaPeloUsuario, masSelecionadaPeloComputador)
+
+}
+
+const mostrarMaoSelecionadaPelosJogadores = (maoSelecionadaPeloUsuario, maoSelecionadaPeloComputador) => {
+
+    const escolhaUsuario = document.querySelector('.escolha-usuario')
+    const escolhaComputador = document.querySelector('.escolha-computador')
+
+    escolhaUsuario.innerText = maoSelecionadaPeloUsuario
+    escolhaComputador.innerText = maoSelecionadaPeloComputador
 
 }
 
